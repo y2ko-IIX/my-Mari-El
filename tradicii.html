@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Марийские традиции</title>
+    <style>
+        body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f9f4;
+    color: #2e2e2e;
+    line-height: 1.6;
+}
+header {
+    background-image: url('tradiciishapka.jpg'); 
+    background-size: cover;
+    background-position: center;
+    height: 300px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); 
+    z-index: 1;
+}
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+h1 {
+    color: #487048;
+    text-align: center;
+    margin-bottom: 20px;
+}
+h2 {
+    color: #487048;
+    margin-top: 30px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #487048;
+}
+p {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+a {
+    color: #487048;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+img {
+    width: 80%;
+    border-radius: 12px;
+    margin: 20px auto;
+    display: block;
+}
+iframe {
+    width: 100%;
+    height: 400px;
+    border-radius: 12px;
+    margin: 20px 0;
+    border: none;
+}
+.gallery-container {
+    display: flex;
+    flex-direction: column; 
+    gap: 0px; /* Уменьшили расстояние между картинками */
+}
+.gallery-item {
+    padding: 0px;
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    min-height: 200px;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+.gallery-item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: transparent; 
+    z-index: 0;
+}
+.back-button {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #487048;
+    color: white;
+    border-radius: 8px;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    font-style: normal; /* Убираем курсив на кнопке */
+}
+.back-button:hover {
+    background-color: #3a5a3a;
+    text-decoration: none;
+}
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #487048;
+    color: white;
+    margin-top: 20px;
+}
+footer p {
+    font-style: normal; /* Убираем курсив в тексте футера */
+}
+footer nav a {
+    color: white;
+    margin: 0 10px;
+}
+@media (max-width: 600px) {
+    img {
+        width: 100%;
+    }
+    .back-button {
+        width: 100%;
+        padding: 12px;
+    }
+}
+    </style>
+</head>
+<body>
+    <header>
+    </header>
+    <main>
+        <h1>Марийские традиции</h1>
+        <p>
+            Марийская культура богата уникальными традициями, которые передаются из поколения в поколение. Эти обычаи отражают глубокую связь народа с природой, его историю и духовные ценности. Традиции марийского народа включают народные праздники, музыку, танцы, костюмы и ритуалы, многие из которых сохранились в первозданном виде до наших дней.
+        </p>
+        <p>
+            Марийцы (самоназвание - "мари") - финно-угорский народ, известный своей бережной сохранностью языческих верований. Около 60% марийцев до сих пор исповедуют традиционную религию, что делает их уникальным явлением в современной Европе. Их культура - это живая связь между прошлым и настоящим.
+        </p>
+
+        <h2>История марийского народа</h2>
+        <p>
+            Марийский народ — один из древнейших народов России, проживающий в Поволжье. Их история насчитывает более тысячи лет и тесно связана с природой этого края. Первые письменные упоминания о марийцах встречаются в трудах готского историка Иордана (VI век) и арабского путешественника Ибн Фадлана (X век).
+        </p>
+        <p>
+            Марийцы традиционно делятся на три основные этнографические группы:
+        </p>
+        <ul>
+            <li>Горные марийцы (правобережье Волги)</li>
+            <li>Луговые марийцы (левобережье Волги)</li>
+            <li>Восточные марийцы (Башкортостан и Татарстан)</li>
+        </ul>
+        <p>
+            Традиционные занятия марийцев включают земледелие (особенно выращивание льна), скотоводство, бортничество, охоту и рыболовство. Эти виды деятельности стали основой для множества праздников и ритуалов, связанных с природными циклами. Особое место в культуре занимает почитание священных рощ (кюсото) - мест проведения языческих молений.
+        </p>
+
+        <h2>Народные праздники</h2>
+        <p>
+            Марийский календарь насыщен традиционными праздниками, связанными с природными циклами и сельскохозяйственными работами:
+        </p>
+        <ul>
+            <li><strong>Семык</strong> - праздник весеннего равноденствия (конец мая), знаменующий пробуждение природы. Во время праздника проводятся обряды очищения, песнопения и круговые танцы вокруг священной берёзы.</li>
+            <li><strong>Зуратул</strong> (Пеледыш пайрем) - праздник цветов и урожая (начало июня), когда люди благодарят природу за щедрость и украшают дома венками из полевых цветов.</li>
+            <li><strong>Шорыкйол</strong> - зимний праздник (в период зимнего солнцестояния), сопровождающийся ряжеными, гаданиями и колядованием.</li>
+            <li><strong>Агавайрем</strong> - праздник плуга (перед началом весенних полевых работ) с обрядами благословения земли.</li>
+        </ul>
+        <p>
+            Особое место занимают свадебные обряды, которые могут длиться несколько дней и включают множество этапов: сватовство, выкуп невесты, благословение в священной роще, переезд в дом жениха. Каждый элемент свадьбы - от узоров на рубахе до песен - имеет глубокое символическое значение.
+        </p>
+
+        <h2>Традиционные ремёсла</h2>
+        <p>
+            Марийцы славятся своими традиционными ремёслами:
+        </p>
+        <ul>
+            <li><strong>Вышивка</strong> - марийская вышивка отличается сложными геометрическими узорами, каждый из которых имеет сакральное значение. Традиционно использовались красные, синие и чёрные нити на белом холсте.</li>
+            <li><strong>Резьба по дереву</li> - особенно знамениты марийские наличники с солярными символами и изображениями мифологических существ.</li>
+            <li><strong>Плетение из лыка и бересты</strong> - изготовление лаптей, корзин, туесков.</li>
+            <li><strong>Кузнечное дело</strong> - марийские кузнецы славились изготовлением сельскохозяйственных орудий и украшений.</li>
+        </ul>
+
+        <div class="gallery-container">
+            <div class="gallery-item">
+                <img src="tanec.jpg" alt="Традиционный марийский танец - круговые движения символизируют цикличность природы">
+            </div>
+            <div class="gallery-item">
+                <img src="koctum.jpg" alt="Марийский национальный костюм - белая холщовая рубаха с вышивкой и головной убор шурка">
+            </div>
+            <div class="gallery-item">
+                <img src="fect.jpg" alt="Ритуальное мероприятие в священной роще - важнейший элемент марийской традиционной религии">
+            </div>
+        </div>
+
+        <h2>Музыка и инструменты</h2>
+        <p>
+            Марийская музыкальная культура основана на народных инструментах:
+        </p>
+        <ul>
+            <li><strong>Шувыр</strong> - волынка из бычьего пузыря</li>
+            <li><strong>Тумыр</strong> - барабан, используемый в ритуальных церемониях</li>
+            <li><strong>Кусле</strong> - гусли с 12-15 струнами</li>
+            <li><strong>Ший пуч</strong> - свирель из ивового прута</li>
+        </ul>
+        <p>
+            Традиционные песни (муро) делятся на обрядовые, лирические и эпические. Особое место занимают "песни-плачи" - импровизированные вокальные произведения, исполняемые на поминках и проводах в армию.
+        </p>
+
+        <a href="index.html" class="back-button">Вернуться на главную</a>
+    </main>
+    <footer>
+        <p>&copy; 2025 Марий-Эл. Все права защищены.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Национальный парк 'Марий Чодра' — уникальный природный заповедник в республике Марий Эл. Посетите наши озера, леса и достопримечательности.">
+    <title>Национальный парк "Марий Чодра"</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f9f4;
+            color: #2e2e2e;
+            line-height: 1.6;
+        }
+        header {
+            background: url('headerozero.jpg') no-repeat center center/cover;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 300px; 
+            position: relative;
+            overflow: hidden;
+        }
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #487048;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        h2 {
+            margin-top: 30px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #487048;
+        }
+        p {
+            font-size: 1.1rem;
+        }
+        a {
+            color: #487048;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        img {
+            width: 80%;
+            border-radius: 12px;
+            margin: 20px auto;
+            display: block;
+        }
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 12px;
+            margin: 20px 0;
+            border: none;
+        }
+        .gallery {
+            display: flex;
+            flex-direction: column; 
+            gap: 20px; 
+        }
+        .gallery img {
+            width: 80%;
+            height: auto; 
+            object-fit: cover;
+            object-position: center;
+            border-radius: 8px;
+            border: none; 
+            background-color: transparent; 
+            margin: 0 auto;
+        }
+        .back-button {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #487048;
+            color: white;
+            border-radius: 8px;
+            font-weight: bold;
+            text-align: center;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        .back-button:hover {
+            background-color: #3a5a3a;
+            text-decoration: none;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #487048;
+            color: white;
+            margin-top: 20px;
+        }
+        footer nav {
+            margin-top: 10px;
+        }
+        footer nav a {
+            color: white;
+            margin: 0 10px;
+        }
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+            p {
+                font-size: 1rem;
+            }
+            img, .gallery img {
+                width: 100%;
+            }
+            .back-button {
+                width: 100%;
+                padding: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+    </header>
+    <main>
+        <h1>Национальный парк "Марий Чодра"</h1>
+        <p>Это уникальный природный заповедник, расположенный в республике Марий Эл, занимающий площадь более 36 тысяч гектаров. Парк славится своими густыми лесами, чистыми реками и живописными озерами, такими как озеро Яльчик и озеро Конан-Ер. Основанный в 1985 году, парк является важным центром сохранения биоразнообразия региона и входит в экологическую сеть "Евроазиатская экологическая сеть".</p>
+
+        <h2>Природа парка</h2>
+        <p>Парк представляет собой уникальную мозаику природных ландшафтов: от вековых сосновых боров до пойменных дубрав, от верховых болот до заливных лугов. Здесь произрастает около 900 видов растений, 50 из которых занесены в Красную книгу России и Марий Эл. Среди них - редкие орхидеи (венерин башмачок настоящий), реликтовые папоротники и лекарственные травы.</p>
+        
+        <p>Фауна парка не менее богата - здесь обитает 56 видов млекопитающих, включая лосей, кабанов, бобров, рысей и даже бурых медведей. Орнитологи насчитывают более 200 видов птиц, среди которых особенно ценны хищники: беркут, орлан-белохвост, скопа и филин. В водоемах парка водится 30 видов рыб, включая щуку, судака, леща и редкого для этих мест хариуса.</p>
+
+        <h2>Достопримечательности</h2>
+        <p>Парк предлагает множество уникальных мест для посещения:</p>
+        <ul>
+            <li><strong>Озеро Яльчик</strong> - самое большое и популярное озеро парка с чистейшей водой и песчаными пляжами</li>
+            <li><strong>Озеро Конан-Ер</strong> - живописный водоем с таинственными легендами</li>
+            <li><strong>Дуб Пугачева</strong> - 400-летний исполин, под которым, по преданию, отдыхал Емельян Пугачев</li>
+            <li><strong>Водопад Уча</strong> - каскадный водопад на реке Уба, особенно красивый весной</li>
+            <li><strong>Карстовые провалы</strong> - уникальные геологические образования</li>
+            <li><strong>Марийские святилища</strong> - древние культовые места марийского народа</li>
+        </ul>
+
+        <div class="gallery">
+            <img src="vodopad.jpg" alt="Водопад Уча - один из самых живописных водопадов парка">
+            <img src="lebedi_na_vodoyome.jpeg" alt="Лебеди на озере Конан-Ер - символ чистоты природы">
+            <img src="dubpugacheva.jpg" alt="Дуб Пугачева - многовековой свидетель истории">
+        </div>
+
+        <h2>История парка</h2>
+        <p>Национальный парк "Марий Чодра" был создан 13 сентября 1985 года Постановлением Совета Министров РСФСР. Идея создания особо охраняемой территории в этом регионе возникла еще в 1970-х годах, когда экологи забили тревогу о сокращении лесных массивов и исчезновении редких видов.</p>
+        
+        <p>Название парка переводится с марийского языка как "Марийский лес". Это отражает главную ценность территории - ее уникальные лесные экосистемы, сохранившиеся практически в первозданном виде. В 1997 году парк был включен в список ключевых орнитологических территорий международного значения.</p>
+        
+        <p>Сегодня парк является не только природоохранным учреждением, но и важным научным центром. Здесь ведутся многолетние исследования по мониторингу экосистем, изучению редких видов и разработке методов устойчивого природопользования. Ежегодно парк посещают более 100 тысяч туристов.</p>
+
+        <h2>Как добраться</h2>
+        <p>Парк расположен в 60 км к востоку от Йошкар-Олы. Добраться можно:</p>
+        <ul>
+            <li><strong>На автомобиле</strong>: по трассе Р175 (Йошкар-Ола - Волжск) до поворота на поселок Красногорский</li>
+            <li><strong>На автобусе</strong>: от автовокзала Йошкар-Олы до остановок "Яльчик" или "Красногорский"</li>
+            <li><strong>С экскурсией</strong>: многие турфирмы предлагают организованные туры в парк</li>
+        </ul>
+        <p>Въезд на территорию парка платный, действуют различные варианты пропусков (на день, неделю, сезон). Для посещения некоторых особо охраняемых зон требуется специальное разрешение администрации парка.</p>
+
+        <h2>Карта парка</h2>
+        <iframe 
+            src="https://yandex.ru/map-widget/v1/?ll=48.3944%2C56.1567&z=13&pt=48.3944%2C56.1567&l=map" 
+            width="100%" 
+            height="400" 
+            frameborder="0" 
+            style="border-radius: 12px; margin: 20px 0; border: none;">
+        </iframe>
+        
+        <a href="index.html" class="back-button">Вернуться на главную</a>
+    </main>
+    <footer>
+        <p>© 2025 Национальный парк "Марий Чодра". Все права защищены.</p>
+    </footer>
+</body>
+</html>

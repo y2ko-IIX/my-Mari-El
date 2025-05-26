@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Фестивали Марий-Эл</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f9f4;
+            color: #2e2e2e;
+            line-height: 1.6;
+        }
+        header {
+            background-image: url('fectivalifoto.jpg'); 
+            background-size: cover;
+            background-position: center;
+            height: 300px; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4); 
+            z-index: 1;
+        }
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #487048;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        h2 {
+            color: #487048;
+            margin-top: 30px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #487048;
+        }
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+        a {
+            color: #487048;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        img {
+            width: 80%;
+            border-radius: 12px;
+            margin: 20px auto;
+            display: block;
+        }
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 12px;
+            margin: 20px 0;
+            border: none;
+        }
+        .gallery {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .gallery-item {
+            padding: 0px;
+            border-radius: 12px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background-size: cover;
+            background-position: center;
+            color: white;
+            min-height: 200px;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .gallery-item::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: transparent; 
+            z-index: 0;
+        }
+        .back-button {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #487048;
+            color: white;
+            border-radius: 8px;
+            font-weight: bold;
+            text-align: center;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            font-style: normal;
+        }
+        .back-button:hover {
+            background-color: #3a5a3a;
+            text-decoration: none;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #487048;
+            color: white;
+            margin-top: 20px;
+        }
+        footer p {
+            font-style: normal;
+        }
+        footer nav a {
+            color: white;
+            margin: 0 10px;
+        }
+        @media (max-width: 600px) {
+            img {
+                width: 100%;
+            }
+            .back-button {
+                width: 100%;
+                padding: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content"></div>
+    </header>
+
+    <main>
+        <h1>Фестивали Марий-Эл</h1>
+        <p>Республика Марий Эл — родина древних традиций и самобытной культуры. Фестивали этой земли отражают богатство марийской духовности, музыки, ремёсел и природы. Каждый год в республике проходят яркие мероприятия, объединяющие жителей и гостей региона.
+        </p>
+        <section id="about">
+            <h2>О фестивалях Марий-Эл</h2>
+            <p>
+                Фестивали в Марий-Эл проводятся по всей республике и охватывают разные направления:
+            </p>
+            <ul>
+                <li><strong>Этнокультурные фестивали</strong> – сохранение языка, обрядов и национальных обычаев</li>
+                <li><strong>Музыкальные фестивали</strong> – от народных ансамблей до современных исполнителей</li>
+                <li><strong>Театральные фестивали</strong> – показ спектаклей на марийском языке</li>
+                <li><strong>Ремесленные ярмарки</strong> – выставка и продажа изделий ручной работы</li>
+                <li><strong>Народные праздники</strong> – такие как Семик, Иван Купала, Щедрый вечер</li>
+            </ul>
+            <p>
+                Эти события не только развлекают, но и учат, пробуждая интерес к культуре предков и способствуя её возрождению.
+            </p>
+        </section>
+
+        <section id="history">
+            <h2>История и значение</h2>
+            <p>
+                Традиционные фестивали Марий-Эл берут своё начало ещё в языческие времена, когда люди собирались для проведения обрядов, игр и песен. Современные фестивали продолжают эту традицию, но уже в новых форматах:
+            </p>
+            <ul>
+                <li>Сохранение марийского языка через театр и песни</li>
+                <li>Поддержка местных ремёсел и художников</li>
+                <li>Привлечение внимания к культуре коренного народа</li>
+                <li>Образовательная составляющая для молодежи</li>
+            </ul>
+            <p>
+                Например, фестиваль «Кугушет луд» (Зелёные свирели) стал символом возрождения марийской музыки и духовности. Он ежегодно собирает артистов, музыкантов и мастеров со всей республики.
+            </p>
+        </section>
+
+        <section id="regions">
+            <h2>Фестивали в разных районах</h2>
+            <p>
+                В разных районах Марий-Эл фестивали имеют свои особенности:
+            </p>
+            <ul>
+                <li><strong>Йошкар-Ола</strong> – крупнейшие городские мероприятия, театры, концерты</li>
+                <li><strong>Волжский район</strong> – фестивали на природе с народными гуляниями</li>
+                <li><strong>Горномарийский район</strong> – традиционные обряды и обрядовая одежда</li>
+                <li><strong>Медведевский район</strong> – школьные и студенческие фестивали</li>
+            </ul>
+            <p>
+                Особенно популярны фестивали в летний период, когда можно насладиться природой, народным творчеством и гостеприимством марийского народа.
+            </p>
+        </section>
+
+        <section id="gallery">
+            <h2>Фотогалерея</h2>
+            <div class="gallery-container">
+                <div class="gallery-item">
+                    <img src="fectone.jpg" alt="Участники фестиваля в традиционных костюмах исполняют народный танец">
+                </div>
+                <div class="gallery-item">
+                    <img src="fecttwo.jpg" alt="Мастерская по созданию марийских музыкальных инструментов на фестивальной площадке">
+                </div>
+                <div class="gallery-item">
+                    <img src="fectthree.jpg" alt="Концерт народного ансамбля под открытым небом во время летнего фестиваля">
+                </div>
+            </div>
+        </section>
+        <section id="modern">
+            <h2>Современные фестивали</h2>
+            <p>
+                Сегодня фестивали Марий-Эл активно развиваются и становятся более доступными:
+            </p>
+            <ul>
+                <li>Проведение онлайн-программ</li>
+                <li>Создание туристических маршрутов вокруг фестивалей</li>
+                <li>Участие молодёжи в организации мероприятий</li>
+                <li>Совместные проекты с другими регионами</li>
+                <li>Интеграция цифровых технологий в организацию</li>
+            </ul>
+            <p>
+                Благодаря этим изменениям фестивали становятся не только культурным, но и образовательным и экономическим явлением, которое помогает развивать регион и сохранять самобытность народа.
+            </p>
+
+            <a href="index.html" class="back-button">Вернуться на главную</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Фестивали Марий-Эл. Все права защищены.</p>
+    </footer>
+</body>
+</html>

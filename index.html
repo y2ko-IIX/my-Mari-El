@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Марий-Эл: Край лесов и озер</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f9f4;
+            color: #2e2e2e;
+            line-height: 1.6;
+        }
+        header {
+            position: relative;
+            height: 400px; 
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+        .header-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; 
+            z-index: -1; 
+        }
+        .header-content {
+            position: relative;
+            z-index: 1; 
+            padding: 20px;
+            border-radius: 12px;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: rgba(72, 128, 72, 0.9);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        nav a {
+            color: white;
+            padding: 15px 20px;
+            text-decoration: none;
+            text-align: center;
+            transition: background 0.3s ease;
+            font-weight: bold;
+        }
+        nav a:hover {
+            background-color: rgba(60, 110, 60, 0.9);
+        }
+        section {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 20px auto;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+            background-color: white;
+            border-radius: 16px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+        }
+        section.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        h1, h2, p {
+            text-align: center;
+        }
+        h2 {
+            text-align: center;
+            color: #487048;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            animation: slideIn 1s ease-in-out;
+        }
+        .about-container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .about-text, .menu-grid, .gallery-container, .gallery-item, .product-info {
+            text-align: center;
+        }
+        .about-text {
+            flex: 1;
+        }
+        .about-slider {
+            flex: 1;
+            position: relative;
+            overflow: hidden;
+            border-radius: 16px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+            background: linear-gradient(145deg, #ffffff, #f0f0f0);
+            padding: 20px;
+            min-height: 400px; 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            border-radius: 12px;
+            overflow: hidden;
+            width: 100%; 
+            height: 100%; 
+        }
+        .slider img {
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+            flex-shrink: 0; 
+            border-radius: 12px;
+        }
+        .slider-controls {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 15px;
+        }
+        .slider-controls button {
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: background 0.3s ease, transform 0.3s ease;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .slider-controls button:hover {
+            background: rgba(255, 255, 255, 1);
+            transform: scale(1.1);
+        }
+        footer {
+            background-color: #487048;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+        }
+        footer p {
+            margin: 0;
+        }
+        /* Анимации */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            animation: fadeIn 1s ease-in-out;
+        }
+        .menu-item {
+            text-align: center;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 12px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background-color: #f9f9f9;
+        }
+        .menu-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            animation: fadeIn 1s ease-in-out;
+        }
+        .gallery-item {
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 12px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background-size: cover;
+            background-position: center;
+            color: white;
+            min-height: 200px;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+        .gallery-item p, .gallery-item .product-info {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            border-radius: 8px;
+            position: relative;
+            z-index: 1;
+        }
+        .gallery-item::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.4);
+            z-index: 0;
+        }
+        #contact .contact-info {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 10px; 
+            background-color: #f9f9f9;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        #contact .contact-info p {
+            margin: 5px 0; 
+            font-size: 1.1rem;
+            color: #2e2e2e;
+        }
+        #contact .contact-info strong {
+            color: #487048;
+        }
+        #map {
+            width: 100%;
+            height: 80px; 
+            border-radius: 12px;
+            overflow: hidden;
+            margin-top: 10px; 
+        }
+        .feedback-form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .feedback-form input, .feedback-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+        .feedback-form button {
+            background-color: #487048;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .feedback-form button:hover {
+            background-color: #3a5a3a;
+        }
+        .reviews {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .review-item {
+            margin: 20px 0;
+            padding: 20px;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .review-item h3 {
+            margin: 0;
+            color: #487048;
+        }
+        .review-item p {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="glavnaya.jpg" alt="Природа Марий-Эл" class="header-image">
+        <div class="header-content">
+            <h1>Марий-Эл: Край лесов и озер</h1>
+            <p>Добро пожаловать в удивительный мир природы и культуры!</p>
+        </div>
+    </header>
+    <nav>
+        <a href="#about">О регионе</a>
+        <a href="#nature">Природа</a>
+        <a href="#culture">Культура</a>
+        <a href="#contact">Контакты</a>
+        <a href="#feedback">Обратная связь</a>
+        <a href="#reviews">Отзывы</a>
+    </nav>
+    <section id="about">
+        <h2>О регионе</h2>
+        <div class="about-container">
+            <div class="about-slider">
+                <div class="slider">
+                    <img src="volga-river.jpg" alt="Природа Марий-Эл">
+                </div>
+            </div>
+            <div class="about-text">
+                <p>Марий-Эл — это удивительный регион России, известный своими густыми лесами, чистыми озерами и богатой культурой марийского народа. Здесь вы найдете уникальные природные заповедники, древние традиции и гостеприимных людей.</p>
+                <p>Республика Марий-Эл расположена в центре европейской части России и славится своей экологией и природными красотами.</p>
+            </div>
+        </div>
+    </section>
+    <section id="nature">
+        <h2>Природа</h2>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <a href="ozeroyalchik.html" style="color: black; text-decoration: none;">
+                    <h3>Озеро Яльчик</h3>
+                    <p>Одно из самых красивых озер региона, идеальное место для отдыха.</p>
+                </a>
+            </div>
+            <div class="menu-item">
+                <a href="marichodra.html" style="color: black; text-decoration: none;">
+                    <h3>Национальный парк "Марий Чодра"</h3>
+                    <p>Густые леса, чистые реки и уникальная флора и фауна.</p>
+                </a>
+            </div>
+            <div class="menu-item">
+                <a href="rekavolga.html" style="color: black; text-decoration: none;">
+                    <h3>Река Волга</h3>
+                    <p>Великая русская река, протекающая через Марий-Эл.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+    <section id="culture">
+        <h2>Культура</h2>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <a href="tradicii.html" style="color: black; text-decoration: none;">
+                    <h3>Марийские традиции</h3>
+                    <p>Узнайте о древних обычаях и обрядах марийского народа.</p>
+                </a>
+            </div>
+            <div class="menu-item">
+                <a href="kostum.html" style="color: black; text-decoration: none;">
+                    <h3>Национальные костюмы</h3>
+                    <p>Яркие и уникальные костюмы марийцев.</p>
+                </a>
+            </div>
+            <div class="menu-item">
+                <a href="fectivali.html" style="color: black; text-decoration: none;">
+                    <h3>Фестивали</h3>
+                    <p>Участвуйте в традиционных праздниках и фестивалях.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+    <section id="contact">
+        <h2>Контакты</h2>
+        <div class="contact-info">
+            <p>Если у вас есть вопросы или вы хотите узнать больше о республике, свяжитесь с нами. Мы всегда рады помочь!</p>
+            <p><strong>Адрес:</strong> г. Йошкар-Ола, ул. Центральная, д. 1</p>
+            <p><strong>Телефон:</strong> +7 (8362) 12-34-56</p>
+            <p><strong>Email:</strong> info@mari-el.ru</p>
+            <p><strong>Часы работы:</strong> Пн-Пт: 9:00 - 18:00, Сб-Вс: выходной</p>
+        </div>
+        <div id="map"></div>
+    </section>
+    <section id="feedback">
+        <h2>Обратная связь</h2>
+        <form class="feedback-form">
+            <input type="text" placeholder="Ваше имя" required>
+            <input type="email" placeholder="Ваш email" required>
+            <textarea placeholder="Ваше сообщение" required></textarea>
+            <button type="submit">Отправить</button>
+        </form>
+    </section>
+    <section id="reviews">
+        <h2>Отзывы</h2>
+        <div class="reviews">
+            <div class="review-item">
+                <h3>Алексей Смирнов</h3>
+                <p>Отличное место для отдыха! Природа потрясающая, люди доброжелательные. Обязательно вернусь сюда снова.</p>
+            </div>
+            <div class="review-item">
+                <h3>Екатерина Иванова</h3>
+                <p>Очень понравились экскурсии и местная кухня. Спасибо за теплый прием!</p>
+            </div>
+            <div class="review-item">
+                <h3>Дмитрий Петров</h3>
+                <p>Прекрасное место для семейного отдыха. Дети в восторге от природы и чистого воздуха.</p>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2025 Марий-Эл. Все права защищены.</p>
+    </footer>
+    <script>
+        const sections = document.querySelectorAll('section');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2 });
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+        let currentSlide = 0;
+        const slides = document.querySelector('.slider');
+        const totalSlides = document.querySelectorAll('.slider img').length;
+        function showSlide(index) {
+            if (index < 0) {
+                currentSlide = totalSlides - 1;
+            } else if (index >= totalSlides) {
+                currentSlide = 0;
+            } else {
+                currentSlide = index;
+            }
+            const offset = -currentSlide * 100;
+            slides.style.transform = `translateX(${offset}%)`;
+        }
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+        function prevSlide() {
+            showSlide(currentSlide - 1);
+        }
+        setInterval(nextSlide, 5000);
+        ymaps.ready(function () {
+            var map = new ymaps.Map('map', {
+                center: [56.1667, 48.5500], 
+                zoom: 10
+            });
+            var placemark = new ymaps.Placemark([56.1667, 48.5500], {
+                hintContent: 'Национальный парк "Марий Чодра"',
+                balloonContent: 'Национальный парк "Марий Чодра" — уникальный природный заповедник.'
+            });
+            map.geoObjects.add(placemark);
+        });
+    </script>
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш_api_ключ&lang=ru_RU"></script>
+</body>
+</html>
